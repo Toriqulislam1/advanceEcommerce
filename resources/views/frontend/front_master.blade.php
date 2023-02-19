@@ -1,130 +1,61 @@
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="utf-8"/>
-	<title>@yield('title') </title>
-	<meta name="description" content="Software Development, Digital Marketing & Video edit services">
-	<meta name="keywords" content="Digital Marketing, Software Development, Video Editing">
-	<meta name="author" content="technovalbd">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="theme-color" content="#fff">
-	<!--website-favicon-->
-	<link href="frontend/assets/images/favicon.png" rel="icon">
-	<!--plugin-css-->
-	<link href="{{ asset('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{ asset('frontend/assets/css/plugin.min.css')}}" rel="stylesheet">
-	<link href="{{ asset('frontend/assets/css/swiper.min.css')}}" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<!-- template-style-->
-	<link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
-	<link href="{{ asset('frontend/assets/css/responsive.css')}}" rel="stylesheet">
-	<link href="{{ asset('frontend/assets/css/darkmode.css')}}" rel="stylesheet">
-	    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>E Store - eCommerce HTML Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
 
-        /* we use dot (.) to target class and
-        hash (#) to target id... */
-        #particles-js {
-            width: 100%;
-            height: 100vh;
-           
-            background-position: center;
-            background-size: cover;
-        }
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
 
-        .center-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
 
-        h1 {
-            color: white;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 100px;
-        }
-        .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.topnav {
-  overflow: hidden;
-  background-color: #fff;
-  height: 37px;
-}
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="{{ asset('frontend/assets/lib/slick/slick.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/assets/lib/slick/slick-theme.css') }}" rel="stylesheet">
 
-.topnav {
-  float: left;
-  color: #333;
-  text-align: left;
-  padding: 8px 6px;
-  text-decoration: none;
-  font-size: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+        <!-- Template Stylesheet -->
+        <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
+    </head>
 
-.topnav li:hover {
-  
-  color: blue;
-}
+    <body>
 
-.topnav a.active {
-  background-color: #fff;
-  color: white;
-}
-li {
-    display: inline-block;
-}
-ul {
-    list-style-type: none;
-}
-.zoom:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(2); 
-}
+        @include('frontend.body.header')
 
-    </style>
-	
- </head>
- <body>   
+        @yield('content')
 
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 copyright">
+                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    </div>
 
+                    <div class="col-md-6 template-by">
+                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
 
-@include('frontend.body.header')
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-	  <!--Start Hero Slider-->
-	  
-@yield('content') 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('frontend/assets/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/lib/slick/slick.min.js') }}"></script>
 
-
-		
-@include('frontend.body.footer')
-<!--End Footer-->
-
-<!-- particles js files -->
-
-    <script src="{{ asset('frontend/assets/js/particles.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/app.js')}}"></script>
-
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/jquery.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/bootstrap.bundle.min.js')}}"></script> 
-<script src="{{ asset('frontend/assets/js/plugin.min.js')}}"></script>
-  <script src="{{ asset('frontend/assets/js/swiper.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/preloader.js')}}"></script>
-<!--common script file-->
-<script src="{{ asset('frontend/assets/js/main.js')}}"></script>
-
- 
-</body>
+        <!-- Template Javascript -->
+        <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+    </body>
 </html>

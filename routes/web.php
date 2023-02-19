@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Backend\PolicyController;
 use App\Http\Controllers\Backend\IndController;
 use App\Http\Controllers\Backend\basicsettingController;
+use App\Http\Controllers\Backend\slideController;
 
 
 
@@ -326,7 +327,28 @@ Route::get('/setting', [basicsettingController::class, 'setting'])->name('add.se
 Route::post('/setting/update', [basicsettingController::class, 'settingUpdate'])->name('setting.update');
 
 
+//admin slider
 
+Route::prefix('slide')->group(function(){
+
+    Route::get('/add', [slideController::class, 'AddSlide'])->name('create-add');
+
+     Route::post('/store', [slideController::class, 'StoreSlide'])->name('slide-store');
+
+     Route::get('/manage', [slideController::class, 'ManageSlide'])->name('slide-manage');
+
+     Route::get('/edit/{id}', [slideController::class, 'Edit'])->name('slide_edit');
+
+     Route::post('/update', [slideController::class, 'SlideUpdate'])->name('slide-update');
+
+     Route::get('/delete/{id}', [slideController::class, 'DeleteSlide'])->name('slide_delete');
+
+     Route::get('/inactive/{id}', [slideController::class, 'InActiveSlide'])->name('slide_inactive');
+     
+     Route::get('/active/{id}', [slideController::class, 'ActiveSlide'])->name('slide_active');
+
+
+});
 
 
 

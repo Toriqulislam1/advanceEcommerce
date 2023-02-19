@@ -1,446 +1,239 @@
-/* Theme: Niwax - Creative Web Design & Digital Marketing Agency HTML5 Template
-Author: Rajesh-Doot	
-File Description: Main JS file of the template*/
 (function ($) {
     "use strict";
-  
-   //wow animation
-    new WOW().init();
-    //Mobile nav
-    var $main_nav = $('#main-nav');
-    var $toggle = $('.toggle');
-    var defaultOptions = {
-      disableAt: false,
-      customToggle: $toggle,
-      levelSpacing: 10,
-       navTitle: 'Technoval Menu',
-       levelTitles: true,
-      levelTitles: true,
-       labelClose: false,
-      levelTitleAsBack: true,
-      levelOpen: 'expand',
-      closeOnClick: true,
-      insertClose: true,
-      closeActiveLevel: true,
-      insertBack: true
-    };  
-  // Nav call plugin
-    var Nav = $main_nav.hcOffcanvasNav(defaultOptions);
-  
-  //Sticky Header 
-    function updateScroll() {
-      if ($(window).scrollTop() >= 80) {
-        $(".navfix").addClass('sticky');
-      } else {
-        $(".navfix").removeClass("sticky");
-      }
-    }
-    $(function () {
-      $(window).scroll(updateScroll);
-      updateScroll();
-    });
-  
-  //Header mega menu
-    var $nav = $('li.sbmenu');
-    $nav.hover(
-      function () {
-        $(this).addClass('hover');
-      },
-      function () {
-        $(this).removeClass('hover');
-      }
-    );
-  
-   //Video magnificPopup
-    $('.video-link').magnificPopup({
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-    });
-  
- 
-   //Owl-Carousel - Home hero card
-    var owl = $('.service-card-prb');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      autoplay: true,
-      margin: 20,
-      nav: false,
-      dots: false,
-      autoplayTimeout: 3500,
-      autoplayHoverPause: true,
-      smartSpeed: 2000,
-      responsive: {
-        0: {
-          items: 1
-        },
-        520: {
-          items: 2
-        },
-        768: {
-          items: 3
-        },
-        1200: {
-          items: 3
-        },
-        1400: {
-          items: 3
-        },
-        1600: {
-          items: 3
-        },
-      }
-    });
-  
-    //Owl-Carousel - Home testimonial
-    var owl = $('.testimonial-card-a');
-    owl.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 6000,
-      autoplayHoverPause: true,
-      smartSpeed: 500,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 1
-        },
-        1024: {
-          items: 1
-        },
-        1400: {
-          items: 1
-        }
-      }
-    });
-  
-    //Owl-Carousel - video testimonial
-    var owl = $('.video-testimonials');
-    owl.owlCarousel({
-      items: 2,  
-      nav: false,
-      dots: false,
-      autoplay: false,
-      autoplayTimeout: 3500,  
-      smartSpeed: 1500,
-      margin: 20,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 2
-        },
-        1024: {
-          items: 2
-        },
-        1400: {
-          items: 2
-        }
-      }
-    });
-  
-    //Owl-Carousel - case-study
-    var owl = $('.project-screens');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      autoplay: true,
-      margin: 20,
-      nav: false,
-      dots: false,
-      autoplayTimeout: 3500,
-      autoplayHoverPause: true,
-      smartSpeed: 2000,
-      responsive: {
-        0: {
-          items: 1
-        },
-        520: {
-          items: 2
-        },
-        768: {
-          items: 3
-        },
-        1200: {
-          items: 3
-        },
-        1400: {
-          items: 3
-        },
-        1600: {
-          items: 3
-        },
-      }
-    }); 
-  
-     //Owl-Carousel -portfolio slide 
-    var owl = $('.porto-slide');
-    owl.owlCarousel({ 
-      items:1,  
-      loop: true,
-      autoplay: true,
-      margin: 10,
-      nav: false,
-      dots: true,
-      stagePadding: 50,
-      autoplayTimeout: 350000,
-      autoplayHoverPause: true,
-      smartSpeed: 2000,
-      responsive: {
-        0: {
-          items: 1,
-          stagePadding:0
-        },
-        520: {
-           items: 1,
-          stagePadding:0
-        },
-        768: {
-           items: 1,
-          stagePadding:0
-        },
-        1200: {
-          items: 1
-        },
-        1400: {
-          items: 1
-        },
-        1600: {
-          items: 1
-        },
-      }
-    }); 
-  
-      //Owl-Carousel -single slide
-    var owl = $('.single-slide');
-    owl.owlCarousel({ 
-      items:1,  
-      loop: true,
-      autoplay: true,
-      margin: 10,
-      nav: false,
-      dots: true,
-      stagePadding: 100,
-      autoplayTimeout: 3500,
-      autoplayHoverPause: true,
-      smartSpeed: 2000,
-       responsive: {
-        0: {
-          items: 1,
-          stagePadding:0
-        },
-        520: {
-           items: 1,
-          stagePadding:0
-        },
-        768: {
-           items: 1,
-          stagePadding:0
-        },
-        1200: {
-          items: 1
-        },
-        1400: {
-          items: 1
-        },
-        1600: {
-          items: 1
-        },
-      }
-    });
-  
-   //Owl-Carousel - app page bages-slider
-    var owl = $('.bages-slider');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      autoplay: true,
-      centre:true,
-      margin: 20,
-      nav: false,
-      dots: false,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true,
-      smartSpeed: 2000,
-      responsive: {
-        0: {
-          items: 2
-        },
-        520: {
-          items: 3
-        },
-        768: {
-          items: 3
-        },
-        1200: {
-          items: 3
-        },
-        1400: {
-          items: 4
-        },
-        1600: {
-          items: 4
-        },
-      }
-    });
-  
-  //Owl-Carousel - app page bages-slider
-    var owl = $('.logo-weworkfor');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      autoplay: true,
-      margin: 10,
-      nav: false,
-      dots: false,
-      autoplayTimeout: 1800,
-      autoplayHoverPause: false,
-      smartSpeed: 2000,
-      responsive: {
-        0: {
-          items: 3
-        },
-        520: {
-          items: 3
-        },
-        768: {
-          items: 4
-        },
-        1200: {
-          items: 4
-        },
-        1400: {
-          items: 5
-        },
-        1600: {
-          items: 6
-        },
-      }
-    });
-  
-    //  //Owl-Carousel - Home testimonial
-    var owl = $('.testimonial-card-b');
-    owl.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      dots: true,
-      dotsContainer: "#testimonials-avatar",
-      smartSpeed: 500,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 1
-        },
-        1024: {
-          items: 1
-        },
-        1400: {
-          items: 1
-        }
-      }
-    });
-  
-  
-  //full card portfolio
-    var owl = $('.zoomowl');
-    owl.owlCarousel({
-          stagePadding: 200,
-          loop:true,
-          margin:10,
-          nav:false,
-          items:1,
-          lazyLoad: true,      
-          responsive:{
-            0:{
-              items:1,
-              stagePadding: 60
-            },
-            600:{
-              items:1,
-              stagePadding: 100
-            },
-            1000:{
-              items:1,
-              stagePadding: 200
-            },
-            1200:{
-              items:1,
-              stagePadding: 250
-            },
-            1400:{
-              items:1,
-              stagePadding: 300
-            },
-            1600:{
-              items:1,
-              stagePadding: 350
-            },
-            1800:{
-              items:1,
-              stagePadding: 400
+    
+    // Dropdown on mouse hover
+    $(document).ready(function () {
+        function toggleNavbarMethod() {
+            if ($(window).width() > 768) {
+                $('.navbar .dropdown').on('mouseover', function () {
+                    $('.dropdown-toggle', this).trigger('click');
+                }).on('mouseout', function () {
+                    $('.dropdown-toggle', this).trigger('click').blur();
+                });
+            } else {
+                $('.navbar .dropdown').off('mouseover').off('mouseout');
             }
-          }
-        });  
-  
-    //Counter Up	
-    $(".counter").counterUp({
-      delay: 10,
-      time: 2500,
-    });
-  
-    //Scroll to top
-    $.scrollUp({
-      animation: 'fade',
-      scrollImg: {
-        active: true,
-        type: 'background'
-      }
-    });
-  
-    //Portfolio Filter		
-    $('.card-list').imagesLoaded(function () {
-      // init Isotope
-      var $grid = $('.card-list').isotope({
-        itemSelector: '.single-card-item',
-        percentPosition: true,
-        masonry: {
-          // use outer width of grid-sizer for columnWidth
-          columnWidth: '.grid-sizer'
         }
-      });    
-      // filter items on button click
-      $('.filter-menu').on('click', 'li', function () {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({
-          filter: filterValue
-        });
-      });
+        toggleNavbarMethod();
+        $(window).resize(toggleNavbarMethod);
     });
-    //for menu active class
-    $('.filter-menu li').on('click', function (event) {
-      $(this).siblings('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
-      event.preventDefault();
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
-  
-  
-  // background image
-    $("[data-background]").each(function () {
-      $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
-    })
-  
-  
-  //end of page
-  })(jQuery);
-  
-  
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+    
+    
+    // Header slider
+    $('.header-slider').slick({
+        autoplay: true,
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+    
+    
+    // Product Slider 4 Column
+    $('.product-slider-4').slick({
+        autoplay: true,
+        infinite: true,
+        dots: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    });
+    
+    
+    // Product Slider 3 Column
+    $('.product-slider-3').slick({
+        autoplay: true,
+        infinite: true,
+        dots: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    });
+    
+    
+    // Product Detail Slider
+    $('.product-slider-single').slick({
+        infinite: true,
+        autoplay: true,
+        dots: false,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider-single-nav'
+    });
+    $('.product-slider-single-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        asNavFor: '.product-slider-single'
+    });
+    
+    
+    // Brand Slider
+    $('.brand-slider').slick({
+        speed: 5000,
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: true,
+        swipeToSlide: true,
+        centerMode: true,
+        focusOnSelect: false,
+        arrows: false,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+    
+    
+    // Review slider
+    $('.review-slider').slick({
+        autoplay: true,
+        dots: false,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+    
+    
+    // Widget slider
+    $('.sidebar-slider').slick({
+        autoplay: true,
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+    
+    
+    // Quantity
+    $('.qty button').on('click', function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
+        if ($button.hasClass('btn-plus')) {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
+            }
+        }
+        $button.parent().find('input').val(newVal);
+    });
+    
+    
+    // Shipping address show hide
+    $('.checkout #shipto').change(function () {
+        if($(this).is(':checked')) {
+            $('.checkout .shipping-address').slideDown();
+        } else {
+            $('.checkout .shipping-address').slideUp();
+        }
+    });
+    
+    
+    // Payment methods show hide
+    $('.checkout .payment-method .custom-control-input').change(function () {
+        if ($(this).prop('checked')) {
+            var checkbox_id = $(this).attr('id');
+            $('.checkout .payment-method .payment-content').slideUp();
+            $('#' + checkbox_id + '-show').slideDown();
+        }
+    });
+})(jQuery);
+
